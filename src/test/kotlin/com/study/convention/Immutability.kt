@@ -1,11 +1,12 @@
 package com.study.convention
 
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class Immutability {
 
     @Test
-    fun `수정되지 않을 거라면, var 대신 val 을 사용하라`() {
+    fun `가능하면 var 대신 val 을 사용하라`() {
         val a = "수정 하면 안돼."
         println("a: $a")
 
@@ -17,7 +18,7 @@ class Immutability {
     }
 
     @Test
-    fun `immutable collection을 사용하라`() {
+    fun `가능하면 immutable collection 을 사용하라`() {
         // Bad: use of mutable collection type for value which will not be mutated
         fun validateValue(actualValue: String, allowedValues: HashSet<String>) {
             println(actualValue)
@@ -46,6 +47,22 @@ class Immutability {
         val allowedValues2 = listOf("a", "b", "c")
 //        allowedValues2.add("d 추가 불가능")
         println(allowedValues2)
+    }
+
+    @Test
+    fun `가능하면 immutable list 반환`() {
+        val preparedItems = listOf("a", "b", "c")
+
+        // bad. 지양
+        val items = arrayListOf<String>()
+        for (pItem in preparedItems) {
+            items.add(pItem)
+        }
+        println(items)
+
+        // good. immutable list 반환
+        val items2 = preparedItems.map { it }
+        println(items2)
     }
 
 }
