@@ -1,6 +1,5 @@
 package com.study.convention
 
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class Immutability {
