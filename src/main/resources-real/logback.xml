@@ -2,9 +2,9 @@
 <configuration>
     <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 파일 위치 수정 -->
-        <file>/Users/user/IdeaProjects/logs/dgng.log</file>
+        <file>/Users/user/IdeaProjects/logs/kolearn.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/home1/irteam/logs/dgng/dgng.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>/home1/irteam/logs/kolearn/kolearn.log.%d{yyyy-MM-dd}</fileNamePattern>
             <!-- keep 90 days' worth of history -->
             <maxHistory>90</maxHistory>
         </rollingPolicy>
